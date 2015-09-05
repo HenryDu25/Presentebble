@@ -7,6 +7,7 @@ var Right = host + ':8090/?RightArrow';
 var Left = host + ':8090/?LeftArrow';
 var notes;
 var cur = 0;
+var font = 'gothic-28-bold';
 
 // get data set
 ajax({ url: dataURL, type: 'json'},
@@ -36,7 +37,7 @@ var wind = new UI.Window({
 var textfield = new UI.Text({
   position: new Vector2(0, 65),
   size: new Vector2(144, 30),
-  font: 'gothic-24-bold',
+  font: font,
   text: "",
   textAlign: 'center'
 });
@@ -56,8 +57,8 @@ var next = function(e) {
     cur++;
     textfield = new UI.Text({
       position: new Vector2(0, 65),
-      size: new Vector2(28, 28),
-      font: 'gothic-24-bold',
+      size: new Vector2(144, 30),
+      font: font,
       text: notes[cur],
       textAlign: 'center'
     });
@@ -79,7 +80,7 @@ var back = function(e) {
     textfield = new UI.Text({
       position: new Vector2(0, 65),
       size: new Vector2(144, 30),
-      font: 'gothic-24-bold',
+      font: font,
       text: notes[cur],
       textAlign: 'center'
     });
@@ -91,10 +92,11 @@ wind.on('click','down', next);
 wind.on('click','up', back);
 
 main.on('click', 'down', function(e) {
+  wind.remove(textfield);
   textfield = new UI.Text({
     position: new Vector2(0, 65),
     size: new Vector2(144, 30),
-    font: 'gothic-24-bold',
+    font: font,
     text: notes[cur],
     textAlign: 'center'
   });
@@ -139,4 +141,4 @@ main.show();
   //});
   //wind.add(textfield);
   //wind.show();
-//});
+//});/});
