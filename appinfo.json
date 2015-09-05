@@ -1,0 +1,48 @@
+{
+    "appKeys": {},
+    "capabilities": [
+        ""
+    ],
+    "companyName": "h7du@uwaterloo.ca",
+    "longName": "Presentebble",
+    "projectType": "pebblejs",
+    "resources": {
+        "media": [
+            {
+                "file": "images/menu_icon.png",
+                "name": "IMAGE_MENU_ICON",
+                "type": "png"
+            },
+            {
+                "file": "images/logo_splash.png",
+                "name": "IMAGE_LOGO_SPLASH",
+                "type": "png"
+            },
+            {
+                "file": "images/tile_splash.png",
+                "name": "IMAGE_TILE_SPLASH",
+                "type": "png"
+            },
+            {
+                "file": "fonts/UbuntuMono-Regular.ttf",
+                "name": "MONO_FONT_14",
+                "type": "font"
+            },
+            {
+                "file": "images/Presentebble.png",
+                "menuIcon": true,
+                "name": "IMAGES_PRESENTEBBLE_PNG",
+                "type": "png"
+            }
+        ]
+    },
+    "sdkVersion": "3",
+    "shortName": "Presentebble",
+    "uuid": "7e9cd370-dded-4e31-95f8-d3e8969bb11c",
+    "versionCode": 1,
+    "versionLabel": "1.0",
+    "watchapp": {
+        "hiddenApp": false,
+        "watchface": false
+    }
+}
