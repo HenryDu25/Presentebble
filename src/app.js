@@ -1,17 +1,10 @@
-/**
- * Welcome to Pebble.js!
- *
- * This is where you write your app.
- */
- 
-
-// Initialization
 var UI = require('ui');
 var Vector2 = require('vector2');
 var ajax = require('ajax');
-var dataURL = 'http://10.59.72.195:8080/notes';
-var Right = 'http://10.59.72.195:8090/?RightArrow';
-var Left = 'http://10.59.72.195:8090/?LeftArrow';
+var host = 'http://10.59.72.195'
+var dataURL = host + ':8080/notes';
+var Right = host + ':8090/?RightArrow';
+var Left = host + ':8090/?LeftArrow';
 var notes;
 var cur = 0;
 
@@ -29,7 +22,7 @@ ajax({ url: dataURL, type: 'json'},
     });
 
 var main = new UI.Card({
-  title: 'Pebble.js',
+  title: 'Presentebble',
   icon: 'images/Presentebble.png',
   subtitle: 'Hello World!',
   body: 'Press any button.'
@@ -37,8 +30,8 @@ var main = new UI.Card({
 
 // setup windows
 var wind = new UI.Window({
-        fullscreen: true
-    });
+    fullscreen: true
+});
 
 var textfield = new UI.Text({
   position: new Vector2(0, 65),
@@ -49,10 +42,9 @@ var textfield = new UI.Text({
 });
 
 
-// functions to change screens 
+// functions to change screens
 var next = function(e) {
   if (cur !== notes.length-1) {
-    console.log('yolo');
     ajax({ url: Right, method: 'get'},
         function(data) {
         console.log("Successfully pressed RightArrow!");
@@ -75,7 +67,6 @@ var next = function(e) {
 
 var back = function(e) {
   if (cur !== 0) {
-    console.log('yolo');
     ajax({ url: Left, method: 'get'},
         function(data) {
         console.log("Successfully pressed LeftArrow!");
@@ -98,6 +89,7 @@ var back = function(e) {
 
 wind.on('click','down', next);
 wind.on('click','up', back);
+
 main.on('click', 'down', function(e) {
   textfield = new UI.Text({
     position: new Vector2(0, 65),
@@ -113,7 +105,7 @@ main.on('click', 'down', function(e) {
 // start of program
 wind.add(textfield);
 main.show();
- 
+
 //main.on('click', 'up', function(e) {
   //var menu = new UI.Menu({
     //sections: [{
@@ -133,7 +125,7 @@ main.show();
   //});
   //menu.show();
 //});
- 
+
 //main.on('click', 'select', function(e) {
   //var wind = new UI.Window({
     //fullscreen: true,
