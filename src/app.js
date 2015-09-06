@@ -1,10 +1,11 @@
 var UI = require('ui');
 var Vector2 = require('vector2');
 var ajax = require('ajax');
-var host = 'http://10.59.72.195'
+var host = 'http://10.59.72.195';
 var dataURL = host + ':8080/notes';
 var Right = host + ':8090/?RightArrow';
 var Left = host + ':8090/?LeftArrow';
+var FullScreen = host + ':8090/?Refresh';
 var timerbool = false;
 var notes;
 var cur = 0;
@@ -201,6 +202,15 @@ main.on('click', 'down', function(e) {
   wind.show();
 });
 
+main.on('click', 'up', function(e) {
+  ajax({ url: FullScreen, method: 'get'},
+        function(data) {
+        console.log("Successfully pressed F5!");
+        },
+        function(error) {
+        console.log('Failed to press F5: ' + error);
+    });
+})
 // start of program -----------------------------------
 wind.add(textfield);
 wind.add(slideNum);
