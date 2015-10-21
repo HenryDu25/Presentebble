@@ -40,7 +40,7 @@ var main = new UI.Window({
 var icon = new UI.Image({
   position: new Vector2(10,10),
   size: new Vector2(28,28),
-  image: 'images/Presentebble.png'  
+  image: 'images/Presentebble.png'
 });
 
 var title = new UI.Text({
@@ -219,38 +219,3 @@ main.add(title);
 main.add(timeElapsed);
 main.add(timer);
 main.show();
-
-//main.on('click', 'up', function(e) {
-  //var menu = new UI.Menu({
-    //sections: [{
-      //items: [{
-        //title: 'Pebble.js',
-        //icon: 'images/menu_icon.png',
-        //subtitle: 'Can do Menus'
-      //}, {
-        //title: 'Second Item',
-        //subtitle: 'Subtitle Text'
-      //}]
-    //}]
-  //});
-  //menu.on('select', function(e) {
-    //console.log('Selected item #' + e.itemIndex + ' of section #' + e.sectionIndex);
-    //console.log('The item is titled "' + e.item.title + '"');
-  //});
-  //menu.show();
-//});
-
-//main.on('click', 'select', function(e) {
-  //var wind = new UI.Window({
-    //fullscreen: true,
-  //});
-  //var textfield = new UI.Text({
-    //position: new Vector2(0, 65),
-    //size: new Vector2(144, 30),
-    //font: 'gothic-24-bold',
-    //text: 'Text\nAnywhere!',
-    //textAlign: 'center'
-  //});
-  //wind.add(textfield);
-  //wind.show();
-//});/});
