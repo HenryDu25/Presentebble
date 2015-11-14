@@ -33,7 +33,7 @@ var wind = new UI.Window({
 });
 
 var main = new UI.Window({
-  fullscreen: false,
+  fullscreen: false
 });
 
 // setup elements ----------------------------------------------
